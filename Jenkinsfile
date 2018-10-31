@@ -5,7 +5,7 @@ node {
 	stage('Maven build') {
 	env.JAVA_HOME="${tool 'JDK11'}"
     	env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
-    	sh 'java -version'
+    	bat 'java -version'
       	bat 'mvn clean install'
     }
 }
