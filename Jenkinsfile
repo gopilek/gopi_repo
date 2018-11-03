@@ -8,6 +8,9 @@ node {
     	bat 'java -version'
       	bat 'mvn clean install'
     }
+	stage('Deploy') {
+	bat 'copy %WORKSPACE%\\target\\addressbook.war C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\'
+	}
 }
 	
 	
