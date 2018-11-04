@@ -9,7 +9,7 @@ node {
       	bat 'mvn clean install'
     }
 	stage('Deploy') {
-	bat 'copy target\\addressbook.war C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\'
+	bat 'copy /Y target\\addressbook.war C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\addressbook.war'
 	}
 }
 	
