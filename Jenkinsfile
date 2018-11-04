@@ -9,7 +9,12 @@ node {
       	bat 'mvn clean install'
     }
 	stage('Deploy') {
+	echo "Stop Tomcat Server.."
+	bat '"C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin\\Tomcat8.exe" stop'
+	echo "Deploy Application into container.."
 	bat 'copy /Y %WORKSPACE%\\target\\*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\"'
+	echo "Start Tomcat Server.."
+	bat '"C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin\\Tomcat8.exe" start'
 	}
 }
 	
